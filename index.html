@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Derick M. Morales - Web Technologies / Information Technology Student Portfolio" />
+  <title>Derick M. Morales | Portfolio</title>
+  <link rel="icon" href="assets/photo.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <script>
+    try { if (localStorage.getItem("portfolio-theme") === "dark") document.documentElement.setAttribute("data-theme", "dark"); } catch (e) { /* storage unavailable */ }
+  </script>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="sky" aria-hidden="true"><div class="sky-day"></div><div class="sky-night"></div></div>
+
+  <!-- Scroll progress bar -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- Animated background blobs -->
+  <div class="bg-shapes" aria-hidden="true">
+    <span class="shape s1"></span>
+    <span class="shape s2"></span>
+    <span class="shape s3"></span>
+  </div>
+
+  <!-- Cursor glow -->
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+  <!-- NAVBAR -->
+  <header class="navbar" id="navbar">
+    <a href="#home" class="logo">DMM<span>.</span></a>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#home" data-i18n="nav_home">Home</a>
+      <a href="#about" data-i18n="nav_about">About</a>
+      <a href="#education" data-i18n="nav_education">Education</a>
+      <a href="#skills" data-i18n="nav_skills">Skills</a>
+      <a href="#resume" data-i18n="nav_resume">Resume</a>
+      <a href="#contact" data-i18n="nav_contact">Contact</a>
+    </nav>
+
+    <div class="nav-right">
+      <div class="lang-toggle" role="group" aria-label="Language">
+        <button class="lang-btn active" data-lang="en" aria-pressed="true">EN</button>
+        <button class="lang-btn" data-lang="tl" aria-pressed="false">TL</button>
+      </div>
+      <button class="daynight" id="themeToggle" role="switch" aria-checked="false" aria-label="Day and night mode">
+        <span class="dn-track"><span class="dn-knob"></span></span>
+      </button>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section id="home" class="hero">
+      <div class="hero-text reveal">
+        <p class="greeting" data-i18n="hero_greeting">Hi, I'm</p>
+        <h1 class="name">Derick M. <span class="gradient-text">Morales</span></h1>
+        <h2 class="role">
+          <span data-i18n="hero_role">Web Technologies</span>
+          <span class="typing" id="typing"></span>
+        </h2>
+        <p class="hero-desc" data-i18n="hero_desc">
+          Information Technology student focused on computer systems, programming, and building things for the web.
+        </p>
+        <div class="hero-buttons">
+          <a href="#contact" class="btn btn-primary" data-i18n="btn_contact">Contact Me</a>
+          <button class="btn btn-outline" id="openResumeHero" data-i18n="btn_resume">View Resume</button>
+        </div>
+        <div class="social-links">
+          <a href="https://www.facebook.com/Susshie03" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="social fb">
+            <svg viewBox="0 0 24 24"><path d="M14 8V6c0-1 .5-1.5 1.5-1.5H17V1h-3c-3 0-4 2-4 4.5V8H7.5v3.5H10V23h4V11.5h3l.5-3.5H14z"/></svg>
+          </a>
+          <a href="https://www.tiktok.com/@sushii425" target="_blank" rel="noopener noreferrer" aria-label="TikTok" class="social tt">
+            <svg viewBox="0 0 24 24"><path d="M16.6 5.8A4.3 4.3 0 0 1 15.5 3h-3.1v12.4a2.6 2.6 0 1 1-1.8-2.5V9.8a5.7 5.7 0 1 0 4.9 5.6V9.2a7.4 7.4 0 0 0 4.3 1.4V7.5a4.3 4.3 0 0 1-3.2-1.7z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/derick-morales-373907387" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="social li">
+            <svg viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4V21H3zM9.5 9.5h3.8v1.6h.1c.5-1 1.8-2 3.8-2 4 0 4.8 2.6 4.8 6V21h-4v-5.2c0-1.2 0-2.8-1.7-2.8s-2 1.3-2 2.7V21h-4z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/susshie_03" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="social ig">
+            <svg viewBox="0 0 24 24"><path d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4zM17.3 5.5a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4zM12 4c2.6 0 2.9 0 4 .1 2.7.1 3.9 1.4 4 4 .1 1.1.1 1.4.1 4s0 2.9-.1 4c-.1 2.6-1.3 3.9-4 4-1.1.1-1.4.1-4 .1s-2.9 0-4-.1c-2.7-.1-3.9-1.4-4-4C4 14.9 4 14.6 4 12s0-2.9.1-4c.1-2.6 1.3-3.9 4-4C9.1 4 9.4 4 12 4z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-photo reveal" id="heroPhoto">
+        <div class="flip-card" id="flipCard" role="button" tabindex="0" aria-label="Flip photo">
+          <div class="flip-front">
+            <div class="photo-ring">
+              <div class="photo-inner">
+                <img src="assets/photo.jpg" alt="Derick M. Morales" />
+              </div>
+            </div>
+          </div>
+          <div class="flip-back">
+            <div class="flip-inner">
+              <p class="stack-title" data-i18n="back_title">Tech Stack</p>
+              <ul class="stack-grid">
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 2h18l-1.6 18.3L12 22l-7.4-1.7z" fill="#1572b6"/><text x="12" y="15.5" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">3</text></svg><span>CSS</span></li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 2h18l-1.6 18.3L12 22l-7.4-1.7z" fill="#e34f26"/><text x="12" y="15.5" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">5</text></svg><span>HTML</span></li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="3" fill="#f7df1e"/><text x="12" y="16.5" text-anchor="middle" font-size="9.5" font-weight="800" fill="#1b1b1b">JS</text></svg><span>JavaScript</span></li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c-4 0-4.2 1.7-4.2 3.5V8h4.4v1H5.9C3.4 9 2 10.5 2 13.2s1.4 4.3 3.9 4.3h1.7v-2.4c0-2.1 1.7-3.6 3.8-3.6h4.5c1.7 0 3-1.4 3-3.1V5.5C19 3.6 17.3 2 15 2z" fill="#3776ab"/><path d="M12 22c4 0 4.2-1.7 4.2-3.5V16h-4.4v-1h6.3c2.5 0 3.9-1.5 3.9-4.2S20.5 6.5 18 6.5h-1.7v2.4c0 2.1-1.7 3.6-3.8 3.6H8.9c-1.7 0-3 1.4-3 3.1v3.4C5.9 20.4 7.6 22 10 22z" fill="#ffd43b"/><circle cx="8.3" cy="5.3" r="1" fill="#fff"/><circle cx="15.7" cy="18.7" r="1" fill="#1b1b1b"/></svg><span>Python</span></li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="12" rx="11" ry="6.2" fill="none" stroke="#8892bf" stroke-width="1.6"/><text x="12" y="14.6" text-anchor="middle" font-size="6.6" font-weight="700" fill="#8892bf">php</text></svg><span>PHP</span></li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10h10v5a4.5 4.5 0 0 1-4.5 4.5h-1A4.5 4.5 0 0 1 6 15z" fill="#f89820"/><path d="M16 11h1.6a2.4 2.4 0 0 1 0 4.8H16" fill="none" stroke="#f89820" stroke-width="1.8"/><path d="M9 2.5c1.2 1.4-1 2.4 0 3.9M12.5 2.5c1.2 1.4-1 2.4 0 3.9" fill="none" stroke="#5382a1" stroke-width="1.4" stroke-linecap="round"/></svg><span>Java</span></li>
+              </ul>
+              <p class="stack-hint" data-i18n="back_hint">Click again to face forward</p>
+            </div>
+          </div>
+        </div>
+        <div class="tech-orbit" aria-label="Tech stack">
+          <span class="orbit-ring" aria-hidden="true"></span>
+          <span class="tech" style="--i:0;--x:46%;--y:-2%"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 2h18l-1.6 18.3L12 22l-7.4-1.7z" fill="#1572b6"/><text x="12" y="15.5" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">3</text></svg>CSS</span>
+          <span class="tech" style="--i:1;--x:4%;--y:28%"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 2h18l-1.6 18.3L12 22l-7.4-1.7z" fill="#e34f26"/><text x="12" y="15.5" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">5</text></svg>HTML</span>
+          <span class="tech" style="--i:2;--x:90%;--y:20%"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="3" fill="#f7df1e"/><text x="12" y="16.5" text-anchor="middle" font-size="9.5" font-weight="800" fill="#1b1b1b">JS</text></svg>JavaScript</span>
+          <span class="tech" style="--i:3;--x:96%;--y:70%"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c-4 0-4.2 1.7-4.2 3.5V8h4.4v1H5.9C3.4 9 2 10.5 2 13.2s1.4 4.3 3.9 4.3h1.7v-2.4c0-2.1 1.7-3.6 3.8-3.6h4.5c1.7 0 3-1.4 3-3.1V5.5C19 3.6 17.3 2 15 2z" fill="#3776ab"/><path d="M12 22c4 0 4.2-1.7 4.2-3.5V16h-4.4v-1h6.3c2.5 0 3.9-1.5 3.9-4.2S20.5 6.5 18 6.5h-1.7v2.4c0 2.1-1.7 3.6-3.8 3.6H8.9c-1.7 0-3 1.4-3 3.1v3.4C5.9 20.4 7.6 22 10 22z" fill="#ffd43b"/><circle cx="8.3" cy="5.3" r="1" fill="#fff"/><circle cx="15.7" cy="18.7" r="1" fill="#1b1b1b"/></svg>Python</span>
+          <span class="tech" style="--i:4;--x:10%;--y:78%"><svg viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="12" rx="11" ry="6.2" fill="none" stroke="#8892bf" stroke-width="1.6"/><text x="12" y="14.6" text-anchor="middle" font-size="6.6" font-weight="700" fill="#8892bf">php</text></svg>PHP</span>
+          <span class="tech" style="--i:5;--x:54%;--y:100%"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10h10v5a4.5 4.5 0 0 1-4.5 4.5h-1A4.5 4.5 0 0 1 6 15z" fill="#f89820"/><path d="M16 11h1.6a2.4 2.4 0 0 1 0 4.8H16" fill="none" stroke="#f89820" stroke-width="1.8"/><path d="M9 2.5c1.2 1.4-1 2.4 0 3.9M12.5 2.5c1.2 1.4-1 2.4 0 3.9" fill="none" stroke="#5382a1" stroke-width="1.4" stroke-linecap="round"/></svg>Java</span>
+        </div>
+        
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section">
+      <h2 class="section-title reveal"><span data-i18n="about_title">About Me</span></h2>
+      <div class="about-grid">
+        <div class="about-card reveal">
+          <p data-i18n="about_text">
+            A motivated and responsible individual seeking an opportunity to gain experience, improve skills, and contribute positively to the company. Willing to learn and grow professionally.
+          </p>
+          <p class="mt" data-i18n="bg_text">
+            I am a motivated and hardworking Information Technology student currently studying at St. Louis Anne Colleges. I am eager to gain experience, improve my skills, and contribute positively in a professional environment.
+          </p>
+        </div>
+
+        <div class="info-card reveal">
+          <h3 data-i18n="personal_title">Personal Information</h3>
+          <ul class="info-list">
+            <li><b data-i18n="lbl_age">Age</b><span>21</span></li>
+            <li><b data-i18n="lbl_dob">Date of Birth</b><span>March 26, 2005</span></li>
+            <li><b data-i18n="lbl_nat">Nationality</b><span data-i18n="val_filipino">Filipino</span></li>
+            <li><b data-i18n="lbl_civil">Civil Status</b><span data-i18n="val_single">Single</span></li>
+            <li><b data-i18n="lbl_lang">Languages</b><span data-i18n="val_langs">Filipino, English</span></li>
+            <li><b data-i18n="lbl_religion">Religion</b><span data-i18n="val_catholic">Catholic</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="objective-card reveal">
+        <h3 data-i18n="obj_title">Objective</h3>
+        <p data-i18n="obj_text">
+          To gain experience and improve my skills while contributing positively to the company through hard work, responsibility, and willingness to learn.
+        </p>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education" class="section">
+      <h2 class="section-title reveal"><span data-i18n="edu_title">Education</span></h2>
+      <div class="timeline">
+        <div class="tl-item reveal">
+          <span class="tl-dot"></span>
+          <div class="tl-card">
+            <span class="tl-date">2024 - 2028</span>
+            <h3 data-i18n="edu1_deg">Bachelor of Science in Information Technology</h3>
+            <h4>St. Louis Anne College of San Pedro</h4>
+            <p data-i18n="edu1_desc">Currently studying with focus on computer systems, programming, and technology-related skills. Developing problem-solving, teamwork, and communication skills through academic projects and activities.</p>
+          </div>
+        </div>
+        <div class="tl-item reveal">
+          <span class="tl-dot"></span>
+          <div class="tl-card">
+            <span class="tl-date">2022 - 2024</span>
+            <h3 data-i18n="edu2_deg">Senior High School</h3>
+            <h4>Lyceum of Alabang Inc.</h4>
+            <p data-i18n="edu2_desc">Completed Senior High School with experiences that strengthened communication, responsibility, teamwork, and adaptability in both academic and extracurricular activities.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section">
+      <h2 class="section-title reveal"><span data-i18n="skills_title">Skills</span></h2>
+      <div class="skills-grid">
+        <div class="skill-card reveal">
+          <h3 data-i18n="sk_soft">Soft Skills</h3>
+          <div class="skill"><span data-i18n="sk_mgmt">Management Skills</span><div class="bar"><i data-w="75"></i></div></div>
+          <div class="skill"><span data-i18n="sk_time">Time Management</span><div class="bar"><i data-w="80"></i></div></div>
+          <div class="skill"><span data-i18n="sk_critical">Critical Thinking</span><div class="bar"><i data-w="78"></i></div></div>
+          <div class="skill"><span data-i18n="sk_fast">Fast Learner</span><div class="bar"><i data-w="90"></i></div></div>
+        </div>
+        <div class="skill-card reveal">
+          <h3 data-i18n="sk_tech">Technical Skills</h3>
+          <div class="skill"><span data-i18n="sk_prog">Basic Programming Knowledge</span><div class="bar"><i data-w="65"></i></div></div>
+          <div class="skill"><span data-i18n="sk_comp">Basic Computer Troubleshooting</span><div class="bar"><i data-w="70"></i></div></div>
+          <div class="skill"><span data-i18n="sk_web">Web Technologies (HTML, CSS, JS)</span><div class="bar"><i data-w="60"></i></div></div>
+        </div>
+      </div>
+
+      <div class="tags reveal">
+        <span class="tag" data-i18n="int_tech">Technology</span>
+        <span class="tag" data-i18n="int_design">Editing and Designing</span>
+        <span class="tag" data-i18n="int_prog">Programming</span>
+      </div>
+    </section>
+
+    <!-- ACHIEVEMENTS -->
+    <section id="achievements" class="section">
+      <h2 class="section-title reveal"><span data-i18n="ach_title">Achievements</span></h2>
+      <div class="ach-grid">
+        <div class="ach-card reveal">
+          <div class="ach-icon">🏅</div>
+          <h3 data-i18n="ach1">With Honor</h3>
+        </div>
+        <div class="ach-card reveal">
+          <div class="ach-icon">🏆</div>
+          <h3 data-i18n="ach2">Academic Award</h3>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESUME -->
+    <section id="resume" class="section">
+      <h2 class="section-title reveal"><span data-i18n="res_title">Resume</span></h2>
+      <div class="resume-box reveal">
+        <p data-i18n="res_text">Want to see my full resume? Click the button below to preview it. It opens inside this page only.</p>
+        <button class="btn btn-primary" id="openResume" data-i18n="btn_preview">Preview Resume</button>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+      <h2 class="section-title reveal"><span data-i18n="contact_title">Contact</span></h2>
+      <div class="contact-grid">
+        <div class="contact-info reveal">
+          <div class="c-item">
+            <span class="c-icon">📍</span>
+            <div><b data-i18n="lbl_address">Address</b><p>Blk 57 Lot 34 Southville 3A San Antonio, San Pedro, Laguna, 4023</p></div>
+          </div>
+          <div class="c-item">
+            <span class="c-icon">📞</span>
+            <div><b data-i18n="lbl_phone">Phone</b><p><a href="tel:+639970775378">(+63) 997 - 0775 - 378</a></p></div>
+          </div>
+          <div class="c-item">
+            <span class="c-icon">✉️</span>
+            <div><b data-i18n="lbl_email">Email</b><p><a href="mailto:Derzky033@gmail.com">Derzky033@gmail.com</a></p></div>
+          </div>
+        </div>
+
+        <form class="contact-form reveal" id="contactForm">
+          <div class="field">
+            <input type="text" id="cName" name="name" required placeholder=" " />
+            <label for="cName" data-i18n="form_name">Your Name</label>
+          </div>
+          <div class="field">
+            <input type="email" id="cEmail" name="email" required placeholder=" " />
+            <label for="cEmail" data-i18n="form_email">Your Email</label>
+          </div>
+          <div class="field">
+            <input type="text" id="cSubject" name="subject" required placeholder=" " />
+            <label for="cSubject" data-i18n="form_subject">Subject</label>
+          </div>
+          <div class="field">
+            <textarea id="cMsg" name="message" rows="5" required placeholder=" "></textarea>
+            <label for="cMsg" data-i18n="form_msg">Your Message</label>
+          </div>
+          <button type="submit" class="btn btn-primary full" data-i18n="btn_send">Send Message</button>
+          <p class="form-note" data-i18n="form_note">This opens your email app with your message ready to send.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> Derick M. Morales. <span data-i18n="foot">Made with ❤️ and lots of coffee.</span></p>
+  </footer>
+
+  <!-- RESUME MODAL (preview only, no download) -->
+  <div class="modal" id="resumeModal" aria-hidden="true" role="dialog" aria-labelledby="modalTitle">
+    <div class="modal-box">
+      <div class="modal-head">
+        <h3 id="modalTitle" data-i18n="res_title">Resume</h3>
+        <button class="modal-close" id="closeResume" aria-label="Close">&times;</button>
+      </div>
+      <iframe id="resumeFrame" title="Resume Preview" data-src="assets/resume.pdf#toolbar=0&navpanes=0"></iframe>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
