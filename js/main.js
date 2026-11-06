@@ -1,13 +1,7 @@
-/* ==========================================================
-   Derick M. Morales - Portfolio Script
-   Features: EN/TL language switch, typing effect, scroll
-   reveal, skill bars, resume preview (no download), contact form
-   ========================================================== */
 
 (() => {
   "use strict";
 
-  /* ---------- 1. TRANSLATIONS ---------- */
   const translations = {
     en: {
       nav_home: "Home", nav_about: "About", nav_education: "Education",
@@ -94,7 +88,6 @@
   let currentLang = "en";
   let typingTimer = null;
 
-  /* ---------- 2. LANGUAGE ---------- */
   function applyLanguage(lang) {
     if (!translations[lang]) return;
     currentLang = lang;
@@ -151,7 +144,7 @@
     tick();
   }
 
-  /* ---------- 4. NAVBAR: scrolled state, active link, mobile menu ---------- */
+
   const navbar = document.getElementById("navbar");
   const navLinks = document.getElementById("navLinks");
   const menuToggle = document.getElementById("menuToggle");
@@ -179,7 +172,6 @@
   window.addEventListener("scroll", onScroll, { passive: true });
   onScroll();
 
-  // Highlight active section in nav
   const sections = document.querySelectorAll("main section[id]");
   const navAnchors = document.querySelectorAll(".nav-links a");
   const activeObserver = new IntersectionObserver(
@@ -196,7 +188,6 @@
   );
   sections.forEach((s) => activeObserver.observe(s));
 
-  /* ---------- 5. SCROLL REVEAL + SKILL BARS ---------- */
   const revealObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
@@ -215,7 +206,7 @@
   );
   document.querySelectorAll(".reveal").forEach((el) => revealObserver.observe(el));
 
-  /* ---------- 6. CURSOR GLOW (desktop only) ---------- */
+ 
   const glow = document.getElementById("cursorGlow");
   if (window.matchMedia("(pointer: fine)").matches) {
     window.addEventListener("mousemove", (e) => {
@@ -226,13 +217,11 @@
     glow.style.display = "none";
   }
 
-  /* ---------- 7. RESUME PREVIEW MODAL (no download) ---------- */
   const modal = document.getElementById("resumeModal");
   const frame = document.getElementById("resumeFrame");
 
   function openResume(e) {
     if (e) e.preventDefault();
-    // Load the PDF only when the user asks to preview it
     if (!frame.getAttribute("src")) {
       frame.setAttribute("src", frame.dataset.src);
     }
@@ -258,7 +247,6 @@
     if (e.key === "Escape" && modal.classList.contains("open")) closeResume();
   });
 
-  /* ---------- 8. CONTACT FORM (opens email app) ---------- */
   const form = document.getElementById("contactForm");
   const RECEIVER = "Derzky033@gmail.com";
 
@@ -289,17 +277,13 @@
     form.reset();
   });
 
-  /* ---------- 9. MISC ---------- */
   document.getElementById("year").textContent = new Date().getFullYear();
 
-  // Restore saved language, default English
   let savedLang = "en";
   try { savedLang = localStorage.getItem("portfolio-lang") || "en"; } catch (e) { /* ignore */ }
   applyLanguage(savedLang);
 })();
 
-
-/* ---------- 9. MORNING / EVENING THEME ---------- */
 (function initTheme() {
   const root = document.documentElement;
   const toggle = document.getElementById("themeToggle");
@@ -317,7 +301,6 @@
   });
 })();
 
-/* ---------- 10. FLIP PHOTO: face and tech stack ---------- */
 (function initFlip() {
   const hero = document.getElementById("heroPhoto");
   const card = document.getElementById("flipCard");
